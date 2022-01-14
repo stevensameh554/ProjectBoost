@@ -8,7 +8,7 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip finishSound; 
     [SerializeField] ParticleSystem crashParticle;
     [SerializeField] ParticleSystem finishParticle; 
-    
+    float delayInSeconds = 1f;
     
     Rigidbody rb;
     Movement move;
@@ -33,7 +33,7 @@ public class CollisionHandler : MonoBehaviour
      
     }
     
-    float delayInSeconds = 1f;
+    
     void OnCollisionEnter(Collision other)
     {
        if (isTransitioning || colllisionDisabled ){return;}
