@@ -9,8 +9,12 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem crashParticle;
     [SerializeField] ParticleSystem finishParticle; 
 
+
     GameObject goldKey;
     
+
+    
+   
     
     Rigidbody rb;
     Movement move;
@@ -19,6 +23,8 @@ public class CollisionHandler : MonoBehaviour
     bool colllisionDisabled = false;
     
     public bool keyClaimed = false;
+
+    float delayInSeconds = 1f;
 
     void Start()
     {
@@ -35,7 +41,7 @@ public class CollisionHandler : MonoBehaviour
      
     }
     
-    float delayInSeconds = 1f;
+    
     void OnCollisionEnter(Collision other)
     {
        if (isTransitioning || colllisionDisabled ){return;}
