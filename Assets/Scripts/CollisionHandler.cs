@@ -8,6 +8,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip finishSound; 
     [SerializeField] ParticleSystem crashParticle;
     [SerializeField] ParticleSystem finishParticle; 
+
+    GameObject goldKey;
     
     
     Rigidbody rb;
@@ -29,7 +31,7 @@ public class CollisionHandler : MonoBehaviour
     void Update() 
     {
      CheatKey();   
-     GameObject.Find("Key Gold");
+     goldKey = GameObject.Find("KeyGold");     
      
     }
     
@@ -50,10 +52,12 @@ public class CollisionHandler : MonoBehaviour
         break;
     
     case "Key":
-        
+       
+         DestroyGameObject();
          keyClaimed = true;
          Debug.Log("Key is claimed");
          break;
+         //makes the key Dissappear and the gate to open
     
     
     default:
@@ -118,6 +122,10 @@ public class CollisionHandler : MonoBehaviour
      }
 
 
+    }
+    void DestroyGameObject()
+    {
+        DestroyObject(goldKey);
     }
   
 }

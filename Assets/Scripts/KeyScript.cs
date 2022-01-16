@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
-   MeshRenderer mesh;
-   MeshCollider meshColl;
-   void Start()
-   {
-    meshColl = GetComponent<MeshCollider>();
-    mesh = GetComponent<MeshRenderer>();   
-   }
-   
-   
-   void OnCollisionEnter(Collision other)
-   {
-    if(other.gameObject.tag == "Player")
-    {
-     mesh.enabled = false;
-     meshColl.isTrigger = true;
+  [SerializeField]CollisionHandler keySeeker;
+  GameObject goldKey;
+  void Update()
+  {
+     goldKey = GameObject.Find("KeyGold");
+  }
+  public void OnTriggerEnter(Collider other)
+  {
+     if(other.gameObject.tag == "Player")
+     {
+      keySeeker.GetComponent<CollisionHandler>().keyClaimed = true;
+      Destroy(goldKey);
+      Debug.Log("The Player Hit The Key");
 
-    }   
-   }
-}
+     }
+  }
+}//Tried to make the key collider a trigger But failed

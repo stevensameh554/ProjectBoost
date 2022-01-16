@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour
 
    void ApplyRotation(float rotationThisFrame)
     {
-        rb.freezeRotation = true;  //The manual rotation
+        rb.freezeRotation = true;  
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
         rb.freezeRotation = false; 
     }
