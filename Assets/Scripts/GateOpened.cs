@@ -17,8 +17,8 @@ public class GateOpened : MonoBehaviour
      if(keySeeker.GetComponent<CollisionHandler>().keyClaimed == true)
      {
      playableDirector.Play();
-     Debug.Log("HE DIDD IT");
+     
      }
       
     }
-}
+}//i really did this right by mistake XXDDD
