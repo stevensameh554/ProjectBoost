@@ -6,19 +6,22 @@ public class GateOpened : MonoBehaviour
 {
     
    
-    public CollisionHandler keySeeker;
+    CollisionHandler collisionHandler;
     public PlayableDirector playableDirector;
     
+    void Start()
+    {
+        collisionHandler = FindObjectOfType<CollisionHandler>();
+    }
     public  void Update()
     {
-        
     playableDirector = GetComponent<PlayableDirector>();
+    if(collisionHandler.keyClaimed == true){
+    playableDirector.Play();
+    }
     
-     if(keySeeker.GetComponent<CollisionHandler>().keyClaimed == true)
-     {
-     playableDirector.Play();
-     
-     }
       
     }
-}//i really did this right by mistake XXDDD
+}//eyo if u are gonna ask me about this part of code eeehh.I really did this right by mistake XXDDD
+ //but it works 100% XD
+ 

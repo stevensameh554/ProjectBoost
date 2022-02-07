@@ -4,20 +4,44 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
-  [SerializeField]CollisionHandler keySeeker;
-  GameObject goldKey;
-  void Update()
-  {
-     goldKey = GameObject.Find("KeyGold");
-  }
-  public void OnTriggerEnter(Collider other)
-  {
-     if(other.gameObject.tag == "Player")
-     {
-      keySeeker.GetComponent<CollisionHandler>().keyClaimed = true;
-      Destroy(goldKey);
-      Debug.Log("The Player Hit The Key");
+ GameObject goldKey;
+ CollisionHandler collisionHandler;
+ 
 
-     }
-  }
-}//Tried to make the key collider a trigger But failed
+
+ void Start()
+ {
+    collisionHandler = FindObjectOfType<CollisionHandler>();
+    goldKey = GameObject.Find("pPlane3");
+ }
+ 
+ void OnCollisionEnter(Collision other)
+ {
+   if(other.gameObject.tag == "Player")
+   {
+    collisionHandler.keyClaimed = true;
+    DestroyObject(goldKey);
+    Debug.Log("LOL KEY");
+   }
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+//Tried to make the key collider a trigger But failed

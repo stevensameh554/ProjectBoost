@@ -9,12 +9,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem crashParticle;
     [SerializeField] ParticleSystem finishParticle; 
 
-
     GameObject goldKey;
     
-
-    
-   
     
     Rigidbody rb;
     Movement move;
@@ -23,9 +19,7 @@ public class CollisionHandler : MonoBehaviour
     bool colllisionDisabled = false;
     
     public bool keyClaimed = false;
-
     float delayInSeconds = 1f;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,9 +30,7 @@ public class CollisionHandler : MonoBehaviour
     
     void Update() 
     {
-     CheatKey();   
-     goldKey = GameObject.Find("KeyGold");     
-     
+     CheatKey();    
     }
     
     
@@ -57,12 +49,12 @@ public class CollisionHandler : MonoBehaviour
         Debug.Log("WOWOWOWO U HAVE ENDED");
         break;
     
-    case "Key":
+    /* case "Key":
        
-         DestroyGameObject();
+         
          keyClaimed = true;
          Debug.Log("Key is claimed");
-         break;
+         break; */
          //makes the key Dissappear and the gate to open
     
     
@@ -89,7 +81,7 @@ public class CollisionHandler : MonoBehaviour
    isTransitioning = true;
    audioSource.Stop();
    audioSource.PlayOneShot(finishSound);
-   finishParticle.Play();
+   finishParticle.Play(); 
    rb.isKinematic = true;
    move.enabled = false;
    Invoke("NextLevel",delayInSeconds);
@@ -129,9 +121,6 @@ public class CollisionHandler : MonoBehaviour
 
 
     }
-    void DestroyGameObject()
-    {
-        DestroyObject(goldKey);
-    }
+    
   
 }
