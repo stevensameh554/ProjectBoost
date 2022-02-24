@@ -9,36 +9,36 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/level 0.unity
+    path: Assets/Game Files/Scenes/level 0.unity
     guid: 5df14df57ef3e994299ebf96fc7c298b
   - enabled: 1
-    path: Assets/Scenes/level 1.unity
+    path: Assets/Game Files/Scenes/level 1.unity
     guid: 69903aed8059e9e4e8b0e7c61542b168
   - enabled: 1
-    path: Assets/Scenes/level 2.unity
+    path: Assets/Game Files/Scenes/level 2.unity
     guid: 691a090446e57dd4092cfb5aad394776
   - enabled: 1
-    path: Assets/Scenes/level 3.unity
+    path: Assets/Game Files/Scenes/level 3.unity
     guid: c492ae35f9e71ef4c814e115d8a4dd2d
   - enabled: 1
-    path: Assets/Scenes/level 4.unity
+    path: Assets/Game Files/Scenes/level 4.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/level 5.unity
+    path: Assets/Game Files/Scenes/level 5.unity
     guid: e0b8684c9f3cdb0448e32bd01658575a
   - enabled: 1
-    path: Assets/Scenes/level 6.unity
+    path: Assets/Game Files/Scenes/level 6.unity
     guid: ec0f60373fff9464e9b3665dc648bc57
   - enabled: 1
-    path: Assets/Scenes/level 7.unity
+    path: Assets/Game Files/Scenes/level 7.unity
     guid: e9b280132768e3a4796ad76bbd040f63
   - enabled: 1
-    path: Assets/Scenes/Teleport level 1.unity
+    path: Assets/Game Files/Scenes/Teleport level 1.unity
     guid: 5b8528a0f95c74545922e6187ed8a79b
   - enabled: 1
-    path: Assets/Scenes/Teleport level 2.unity
+    path: Assets/Game Files/Scenes/Teleport level 2.unity
     guid: 726b874880b2da14aa2d6da8b13f37ea
   - enabled: 1
-    path: Assets/Scenes/Teleport level 3.unity
+    path: Assets/Game Files/Scenes/Teleport level 3.unity
     guid: f912627f305abaa4783d20922fc40532
   m_configObjects: {}
