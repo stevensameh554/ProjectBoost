@@ -81,6 +81,8 @@ public class CollisionHandler : MonoBehaviour
 
   void FinishSequence()
    {
+    Scene theValue = SceneManager.GetActiveScene();
+    PlayerPrefs.SetString("userLevel", theValue.name);
    isTransitioning = true;
    audioSource.Stop();
    audioSource.PlayOneShot(finishSound);

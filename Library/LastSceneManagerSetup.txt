@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Game Files/Scenes/Teleport level 3.unity
+- path: Assets/Game Files/Scenes/UI/MainMenu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
