@@ -24,24 +24,6 @@ public class KeyScript : MonoBehaviour
     Debug.Log("LOL KEY");
    }
  }
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 //Tried to make the key collider a trigger But failed
