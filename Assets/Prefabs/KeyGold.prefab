@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAngle: 0
-  yAngle: 2
+  yAngle: 0.5
   zAngle: 0
 --- !u!114 &7787328289774024024
 MonoBehaviour:
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2024874912}
   m_Layer: 0
   m_Name: KeyGold
-  m_TagString: Friendly
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

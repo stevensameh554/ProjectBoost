@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
+   
    
    [SerializeField] ParticleSystem mainThrustParticle;
    [SerializeField] float mainThrust = 100f;
    [SerializeField] float rotateThrust = 100f;
    [SerializeField] AudioClip mainEngine;
+
+   private int thrustValue;
+   private int rotateValue;
+
    
-   
+
    AudioSource audioSource;
    Rigidbody rb;
  
@@ -26,34 +32,45 @@ public class Movement : MonoBehaviour
    
     void Update()
     {
-        ProcessThrust();  
+        ThrustPhone();
     }
-    void FixedUpdate() 
+
+    
+    void FixedUpdate()
     {
-    ProcessRotation();
+        ProcessRotate();
     }
-  
-  
-  
+    private void ThrustPhone()
+    {
+        rb.AddRelativeForce(Vector3.up * mainThrust * thrustValue * Time.deltaTime);
+         
+    }
+
+    private void ProcessRotate()
+    {
+        transform.Rotate(Vector3.forward * rotateValue * rotateThrust * Time.deltaTime);
+    }
 
 
-  void ProcessThrust()
-  {
-   //Going up
-   if(Input.GetKey(KeyCode.Space))
+
+
+    void ProcessThrust()
+    {
+        //Going up
+        if (Input.GetKey(KeyCode.Space))
         {
             StartThrusting();
         }
         else
         {
-            StopThrusting();
+            StopSoundFX();
         }
 
     }
 
    
 
-    void StartThrusting()
+    public void StartThrusting()
     {
         rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         if (audioSource.isPlaying == false)
@@ -65,7 +82,7 @@ public class Movement : MonoBehaviour
             mainThrustParticle.Play();
         }
     }
-    void StopThrusting()
+    public void StopSoundFX()
     {
         if (audioSource.isPlaying)
         {
@@ -74,27 +91,43 @@ public class Movement : MonoBehaviour
         }
     }
    
-  void ProcessRotation(){
+    // public void ProcessRotation(){
 
-     if(Input.GetKey(KeyCode.A))
-        {
-          ApplyRotation(-rotateThrust);
+     
+     
+    //  if(Input.GetKey(KeyCode.A))
+    //     {
+    //       ApplyRotation(rotateThrust);
 
-        }
-        else if(Input.GetKey(KeyCode.D))
-       {
-          ApplyRotation(rotateThrust);
+    //     }
+    //     else if(Input.GetKey(KeyCode.D))
+    //    {
+    //       ApplyRotation(-rotateThrust);
 
-       }
-    }
+    //    }
+    // }
 
-   void ApplyRotation(float rotationThisFrame)
+    public void ApplyRotation(int value)
     {
         
-        transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+        rotateValue = value;
         
     }
-    
+    public void ApplyThrust(int value)
+    {
+        thrustValue = value;
+    }
+    public void PlaySoundFX()
+    {
+        if (audioSource.isPlaying == false)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+        if (!mainThrustParticle.isPlaying)
+        {
+            mainThrustParticle.Play();
+        }
+    }
 
 }
   
