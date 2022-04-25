@@ -89,6 +89,7 @@ public class CollisionHandler : MonoBehaviour
    finishParticle.Play(); 
    rb.isKinematic = true;
    move.enabled = false;
+  
    Invoke("NextLevel",delayInSeconds);
    }
    void RelodLevel()

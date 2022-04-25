@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637805747790000000
+      ticks: 637862920200000000
     m_Hash: 2297365406
   m_LockFileStatus:
     m_FilePath: /Users/davidbolis/Desktop/Work/ProjectBoost/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637805747790000000
+      ticks: 637862920200000000
     m_Hash: 1136593605
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

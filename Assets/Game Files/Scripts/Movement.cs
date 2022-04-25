@@ -9,7 +9,9 @@ public class Movement : MonoBehaviour
    [SerializeField] float mainThrust = 100f;
    [SerializeField] float rotateThrust = 100f;
    [SerializeField] AudioClip mainEngine;
-   
+   bool upok;
+   bool left;
+   bool right;
    
    AudioSource audioSource;
    Rigidbody rb;
@@ -34,13 +36,35 @@ public class Movement : MonoBehaviour
     }
   
   
-  
+    public void pointerDownupok(){
+        upok = true;
+    }
+    public void pointerUpupok(){
+        upok = false;
+    }
+
+    public void gorightDown(){
+        right = true;
+    }
+    public void gorigjtUp(){
+        right = false;
+    }
+
+    public void goleftDown(){
+        left = true;
+    }
+    public void goleftUp(){
+        left = false;
+    }
+
+
+
 
 
   void ProcessThrust()
   {
    //Going up
-   if(Input.GetKey(KeyCode.Space))
+   if(Input.GetKey(KeyCode.Space) || upok == true)
         {
             StartThrusting();
         }
@@ -51,10 +75,11 @@ public class Movement : MonoBehaviour
 
     }
 
-   
+ 
 
-    void StartThrusting()
+    public void StartThrusting()
     {
+        
         rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         if (audioSource.isPlaying == false)
         {
@@ -86,6 +111,18 @@ public class Movement : MonoBehaviour
           ApplyRotation(rotateThrust);
 
        }
+       if (left == true){
+           ApplyRotation(-rotateThrust);
+       }
+       if (right == true){
+           ApplyRotation(rotateThrust);
+       }
+    }
+    public void LeftRotation(){
+        ApplyRotation(-rotateThrust);
+    }
+    public void RightRotation(){
+        ApplyRotation(rotateThrust);
     }
 
    void ApplyRotation(float rotationThisFrame)
